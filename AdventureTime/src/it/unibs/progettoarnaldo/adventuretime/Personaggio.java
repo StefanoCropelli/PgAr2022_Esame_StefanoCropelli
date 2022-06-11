@@ -44,6 +44,14 @@ public class Personaggio {
 		return difesa;
 	}
 	
+	/**
+	 * metodo per muovere il personaggio
+	 * @param matrice
+	 * @param x
+	 * @param y
+	 * @param xNuovo
+	 * @param yNuovo
+	 */
 	public void muoviPersonaggio(String[][] matrice, int x, int y, int xNuovo, int yNuovo) {
 		
 		matrice[x][y] = ".";

@@ -158,13 +158,14 @@ public class Turno {
 	}
 	
 	/**
-	 * metodo per raccogliere gli oggetti, non ultimato
+	 * metodo per raccogliere gli oggetti
 	 * @param inventario
 	 * @param personaggio
 	 */
 	public void prendiOggetti(Inventario inventario, Personaggio personaggio) {
 		
 		int scelta = 0;
+		boolean inserito = false;
 		//uso numeri randomici tra 0 e 20 per capire che tipo di oggetto uscirà, se è tra 0 e 8 è un arma, tra 9 e 15 uno scudo e tra 16 e 20 una pozione
 		int tipoOggetto = rand.nextInt(TROVA_OGGETTO) +1;
 		if(tipoOggetto <= 8) {
@@ -183,11 +184,15 @@ public class Turno {
 						if(inventario.getArmiEScudi().get(i).getTipo().equals("arma")) {
 							inventario.getArmiEScudi().remove(i);
 							inventario.getArmiEScudi().add(arma);
+							inserito = true;
 						}
 					}
 					//se ho sostituito l'oggetto equipaggiato lo rimpiazzo con quello nuovo
 					if(personaggio.getStrumento().getTipo().equals("arma")) {
 						personaggio.setStrumento(arma);
+					}
+					if(inserito = false) {
+						inventario.getArmiEScudi().add(arma);
 					}
 				}
 			}
@@ -209,10 +214,14 @@ public class Turno {
 						if(inventario.getArmiEScudi().get(i).getTipo().equals("scudo")) {
 							inventario.getArmiEScudi().remove(i);
 							inventario.getArmiEScudi().add(arma);
+							inserito = true;
 						}
 					}
 					if(personaggio.getStrumento().getTipo().equals("scudo")) {
 						personaggio.setStrumento(arma);
+					}
+					if(inserito = false) {
+						inventario.getArmiEScudi().add(arma);
 					}
 				}
 			}

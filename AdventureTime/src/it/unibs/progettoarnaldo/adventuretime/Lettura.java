@@ -10,6 +10,10 @@ import javax.xml.stream.XMLStreamReader;
 
 public class Lettura {
 
+	/**
+	 * metodo per lettura del file
+	 * @return
+	 */
 	public static String[][] letturaXml() {
 		
 		String [][] matrice = new String[trovaRigheColonne("righe")][trovaRigheColonne("colonne")];
@@ -68,6 +72,11 @@ public class Lettura {
 		return matrice;
 	}
 	
+	/** 
+	 * metodo per trovare il numero di colonne o di righe della matrice
+	 * @param temp
+	 * @return
+	 */
 	public static int trovaRigheColonne(String temp){
 		
 		int righeOColonne = 0;
